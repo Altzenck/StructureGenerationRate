@@ -1,0 +1,17 @@
+# Should the plugin cache the default values before it overrides them so you can check them out later?
+cache-default-values: true
+# Per-world configuration
+#
+# Structure options: mineshafts, nether_complexes, desert_pyramids, jungle_temples, ocean_ruins, buried_treasures,
+# ruined_portals, end_cities, shipwrecks, igloos, ocean_monuments, villages, pillager_outposts, nether_fossils,
+# woodland_mansions, swamp_huts, strongholds
+#
+# Spread type options: linear, triangular
+worlds:
+  "world":
+    structures:
+      "mineshafts":
+        spacing: 20 # Optional
+        separation: 15 # Optional
+        spread-type: 'linear' # Optional
+        salt: 123456 # Optional
