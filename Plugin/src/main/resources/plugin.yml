@@ -1,6 +1,8 @@
 name: ${project.name}
 version: ${project.version}
-author: ${author}
+authors:
+  - ${author}
+  - Altzenck
 main: dev.dexuby.structuregenerationrate.MainPl
 api-version: 1.18
 load: POSTWORLD

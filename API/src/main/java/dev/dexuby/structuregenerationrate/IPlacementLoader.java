@@ -7,5 +7,5 @@ public interface IPlacementLoader {
 
     void load();
 
-    IStructureConfiguration toStructureConfiguration(String path, Configuration config);
+    IStructureConfiguration toStructureConfiguration(String structure, String path, Configuration config);
 }

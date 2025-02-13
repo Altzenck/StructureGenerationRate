@@ -6,9 +6,7 @@ public record WorldConfigurationImpl(Map<String, IStructureConfiguration> struct
 
     @Override
     public IStructureConfiguration getStructureConfiguration(final String name) {
-
         return this.structureConfigurations.get(name);
-
     }
 
 }

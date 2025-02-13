@@ -2,16 +2,44 @@
 cache-default-values: true
 # Per-world configuration
 #
-# Structure options: mineshafts, nether_complexes, desert_pyramids, jungle_temples, ocean_ruins, buried_treasures,
-# ruined_portals, end_cities, shipwrecks, igloos, ocean_monuments, villages, pillager_outposts, nether_fossils,
-# woodland_mansions, swamp_huts, strongholds
-#
-# Spread type options: linear, triangular
 worlds:
   "world":
     structures:
+      # 1.18.2+ Structure options: mineshafts, nether_complexes, desert_pyramids, jungle_temples, ocean_ruins, buried_treasures,
+      # ruined_portals, end_cities, shipwrecks, igloos, ocean_monuments, villages, pillager_outposts, nether_fossils,
+      # woodland_mansions, swamp_huts
+      #
+      # 1.18.1 and previous versions structure options: https://minecraft.wiki/w/Structure?oldid=2090210#Locating
+      #
+      # You can test the fields graphically here: https://misode.github.io/worldgen/structure-set/
+      #
       "mineshafts":
+        # Average distance between two neighboring generation attempts. Value between 0 and 4096 (inclusive).
         spacing: 20 # Optional
+        # Minimum distance (in chunks) between two neighboring attempts. Value between 0 and 4096 (inclusive). Has to be
+        # strictly smaller than spacing. The maximum distance of two neighboring generation attempts is
+        # 2*spacing - separation.
         separation: 15 # Optional
+        # Determines the type of propagation to be used to group the structures
+        # linear : The structures are placed in a uniform manner, without following a specific trend or position.
+        #
+        # triangular : The structures follow a triangular orientation, which makes them more likely to generate in the
+        #              center of the chunks than at the edges, creating a grouping of structures that simulates a more
+        #              natural generation.
         spread-type: 'linear' # Optional
+        #1.16+ only
         salt: 123456 # Optional
+      # The strongholds have a different type of placement in the form of concentric rings around the world.
+      # https://minecraft.wiki/w/Structure_set#concentric_rings
+      "strongholds":
+        distance: 20 # Optional
+        spread: 3 # Optional
+        count: 128 # Optional
+        #1.19+ only
+        salt: 123456 # Optional
+        #(1.19+ only) List of biomes where the structure is likely to spawn. Only resource locations are allowed. All biomes here:
+        #https://minecraft.wiki/w/Biome#Java_Edition
+        #preferred-biomes:
+        #  - plains
+        #  - desert
+        #  - taiga
